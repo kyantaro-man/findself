@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def prodection?
+  def production?
     Rails.env.production?
   end
 

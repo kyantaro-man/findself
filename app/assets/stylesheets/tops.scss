@@ -41,6 +41,7 @@
   &__item {
     border: solid 1px;
     transition: 1.0s;
+    position: relative;
     
     &:hover {
       opacity: 0.5;
@@ -51,6 +52,14 @@
       display: grid;
       grid-template-rows: 35px 35px 35px;
       grid-template-columns: 120px 60px;
+    }
+
+    &-image {
+      position: absolute;
+      right: 4px;
+      top: 86px;
+      border: solid 2px #333;
+      border-radius: 50%;
     }
   }
 

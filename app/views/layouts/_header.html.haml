@@ -1,9 +1,9 @@
 %header
-  = link_to image_tag("/assets/header-logo.png", alt: "ヘッダー画像", height: "44px", width: "44px", class: "header__logo"), root_path
+  = link_to image_tag("/assets/header-logo.png", alt: "ヘッダーロゴ画像", height: "44px", width: "44px", class: "header__logo"), root_path
   %nav.global-menu
     %ul.global-menu__box
       %li.grobal-menu__item
-        = link_to "おすすめ/人気を探す", "#", class: "link"
+        = link_to "おすすめ/人気を探す", root_path, class: "link"
       %li.global-menu__item
         = link_to "自己分析をする", "#", class: "link"
   = form_with local: true, class: "search-form" do |f|

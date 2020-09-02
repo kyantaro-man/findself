@@ -1,0 +1,30 @@
+%footer
+  .footer__inner
+    %ul.footer__menu
+      %li.footer__menu__column
+        %p.footer__menu__title About
+        %ul.footer__menu__list
+          %li.footer__menu__item
+            = link_to "運営者サイト", "https://kyantaro-man.github.io/shin_portfolio_site/", class: "link white"
+          %li.footer__menu__item
+            = link_to "利用規約", "#", class: "link white"
+          %li.footer__menu__item
+            = link_to "ヘルプ", "#", class: "link white"
+          %li.footer__menu__item
+            = link_to "プライバシー", "#", class: "link white"
+      %li.footer__menu__column
+        %p.footer__menu__title Products
+        %ul.footer__menu__list
+          %li.footer__menu__item
+            = link_to "https://myselfnote.herokuapp.com/", class: "link white" do
+              MySelf
+              %p.footer__menu__item-description 日記アプリです。自己紹介文も記録できます。(Herokuデプロイ)
+          %li.footer__menu__item
+            = link_to "https://chatbot-shin.web.app/", class: "link white" do
+              ChatBotShin
+              %p.footer__menu__item-description チャットボットアプリです。Reactの勉強用で作成しました。(firebaseデプロイ)
+    .footer__bottom
+      .footer__bottom-logo
+        = link_to image_tag("/assets/title-logo.png", alt: "フッターロゴ画像", height: "44px", class: ""), root_path
+      .footer__bottom-text
+        = link_to "トップへ戻る", "#", class: "link white"

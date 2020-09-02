@@ -1,0 +1,13 @@
+.wrapper
+  = render partial: 'layouts/header'
+  %main
+    %section.category-area
+      %h2.category-area__title 最新プロフィール
+      = render partial: 'category_box'
+    %section.category-area
+      %h2.category-area__title おすすめプロフィール
+      = render partial: 'category_box'
+    %section.category-area
+      %h2.category-area__title 人気プロフィール
+      = render partial: 'category_box'
+  = render partial: 'layouts/footer'

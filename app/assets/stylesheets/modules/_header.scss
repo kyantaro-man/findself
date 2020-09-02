@@ -81,6 +81,11 @@ header {
     margin-right: 20px;
     border: solid 1px #333;
     border-radius: 50%;
+    transition: 1.0s;
+    
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &__text {

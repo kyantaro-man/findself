@@ -1,5 +1,23 @@
 .wrapper
+  - unless user_signed_in?
+    .intro-bar
+      %p FindSelfで、オリジナルプロフィールが作成できます
   = render partial: 'layouts/header'
+  - unless user_signed_in?
+    .intro-field
+      %h2.intro-field__title 自分のオリジナルプロフィールを作成しよう！
+      .intro-field__bottom
+        .intro-field__bottom--left
+          = link_to new_user_registration_path, class: "intro-field__title-btn" do
+            新規登録して
+            %br
+            プロフィールを作成
+        .intro-field__bottom--right
+          %h3.intro-field__title-min 3つの特徴
+          %ul
+            %li.intro-field__content 自由にオリジナルのプロフィールを作ることができる。
+            %li.intro-field__content 自己分析テストの結果がプロフィール作成に活かせる。
+            %li.intro-field__content 他のユーザーのプロフィールをお気に入り登録できる。
   %main
     %section.category-area
       %h2.category-area__title 最新プロフィール

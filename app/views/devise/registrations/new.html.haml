@@ -2,8 +2,8 @@
   .sign-up__box
     = image_tag "/assets/title-logo.png", alt: "新規登録ロゴ画像", height: "44px", class: "sign-up__box-logo"
     %h2.sign-up__box-title 新規登録して続ける(必須項目)
-    = form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: "sign-up__form"} do |f|
-      = render "devise/shared/error_messages", resource: resource
+    = form_for @user, url: user_registration_path, html: {class: "sign-up__form"} do |f|
+      = render "devise/shared/error_messages", resource: @user
       .sign-up__form-item
         = f.label :nickname, "ニックネーム"
         %span.sign-up__form-require 必須

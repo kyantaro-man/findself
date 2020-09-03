@@ -5,14 +5,36 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(sign_up_params)
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render :new and return
+    end
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    @basic = @user.build_basic
+    render :new_basic
+  end
+
+  def create_basic
+    @user = User.new(session["devise.regist_data"]["user"])
+    @basic = Basic.new(basic_params)
+    unless @basic.valid?
+      flash.now[:alert] = @basic.errors.full_messages
+      render :new_basic and return
+    end
+    @user.build_basic(@basic.attributes)
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+    redirect_to root_path, notice: '新規登録しました'
+  end
 
   # GET /resource/edit
   # def edit
@@ -38,7 +60,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def basic_params
+    params.require(:basic).permit(:birth_place, :birth_date, :blood_type, :gender)
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

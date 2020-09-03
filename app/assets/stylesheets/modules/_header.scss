@@ -93,3 +93,38 @@ header {
     font-size: 12px;
   }
 }
+
+.authentication-menu {
+  margin-left: auto;
+
+  &__box {
+    display: flex;
+  }
+
+  &__item {
+    text-align: center;
+    line-height: 44px;
+    margin-right: 16px;
+  }
+
+  &__link {
+    height: 44px;
+    width: 120px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 2px 2px 2px #FF914D;
+    color:#333;
+    text-decoration: none;
+
+    &:hover {
+      color: #FF914D;
+      font-weight: bold;
+    }
+
+    &:active {
+      color: #333;
+      font-weight: normal;
+      box-shadow: 0 0 2px #FF914D;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.sign-up__wrapper
+  .sign-up__box
+    = image_tag "/assets/title-logo.png", alt: "新規登録ロゴ画像", height: "44px", class: "sign-up__box-logo"
+    %h2.sign-up__box-title 新規登録して続ける(任意項目)
+    = form_for @basic, html: {class: "sign-up__form"} do |f|
+      = render "devise/shared/error_messages", resource: @basic
+      .sign-up__form-item
+        = f.label :birth_place, "出身地"
+        %span.sign-up__form-optional 任意
+        %span.sign-up__form-confirm 入力した内容は公開されます。
+        %br/
+        = f.text_field :birth_place, class: "sign-up__form-input", placeholder: "出身地"
+      .sign-up__form-item
+        = f.label :birth_date, "生年月日"
+        %span.sign-up__form-optional 任意
+        %span.sign-up__form-confirm 入力した内容は公開されます。
+        %br/
+        = f.date_select :birth_date, {include_blank: true, use_month_numbers: true, end_year: Time.now.year, selected: Date.new(1930, 1, 1)}, {class: "sign-up__form-date"}
+      .sign-up__form-item
+        = f.label :blood_type, "血液型"
+        %span.sign-up__form-optional 任意
+        %span.sign-up__form-confirm 入力した内容は公開されます。
+        %br/
+        = f.select :blood_type, options_for_select(Basic.blood_types.keys, selected: 0), {}, {class: "sign-up__form-blood"}
+      .sign-up__form-item
+        = f.label :gender, "性別"
+        %span.sign-up__form-optional 任意
+        %span.sign-up__form-confirm 入力した内容は公開されます。
+        .sign-up__form-item--radio
+          .sign-up__form-item--radio-box
+            = f.radio_button :gender, :無回答
+            = f.label :無回答
+          .sign-up__form-item--radio-box
+            = f.radio_button :gender, :男性
+            = f.label :男性
+          .sign-up__form-item--radio-box
+            = f.radio_button :gender, :女性
+            = f.label :女性
+          .sign-up__form-item--radio-box
+            = f.radio_button :gender, :その他
+            = f.label :その他
+      .sign-up__form-submit
+        = f.submit "→", class: "sign-up__form-btn"

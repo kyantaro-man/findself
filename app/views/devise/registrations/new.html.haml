@@ -1,0 +1,38 @@
+.sign-up__wrapper
+  .sign-up__box
+    = image_tag "/assets/title-logo.png", alt: "新規登録ロゴ画像", height: "44px", class: "sign-up__box-logo"
+    %h2.sign-up__box-title 新規登録して続ける(必須項目)
+    = form_for @user, url: user_registration_path, html: {class: "sign-up__form"} do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .sign-up__form-item
+        = f.label :nickname, "ニックネーム"
+        %span.sign-up__form-require 必須
+        %span.sign-up__form-confirm 50文字以内
+        %br/
+        = f.text_field :nickname, autocomplete: "nickname", class: "sign-up__form-input", placeholder: "(例) 山田太郎"
+      .sign-up__form-item
+        = f.label :username, "ユーザーネーム"
+        %span.sign-up__form-require 必須
+        %span.sign-up__form-confirm @から始まる英数字15文字以内
+        %br/
+        = f.text_field :username, autocomplete: "username", class: "sign-up__form-input", placeholder: "(例) @yamadataro1"
+      .sign-up__form-item
+        = f.label :email
+        %span.sign-up__form-require 必須
+        %span.sign-up__form-confirm 同じEメールアドレスは使えません。
+        %br/
+        = f.email_field :email, autocomplete: "email", class: "sign-up__form-input", placeholder: "(例) yamada@gmail.com"
+      .sign-up__form-item
+        = f.label :password
+        %span.sign-up__form-require 必須
+        %span.sign-up__form-confirm 英数字7文字以上
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: "sign-up__form-input", placeholder: "パスワード"
+      .sign-up__form-item
+        = f.label :password_confirmation
+        %span.sign-up__form-require 必須
+        %span.sign-up__form-confirm 英数字7文字以上
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "sign-up__form-input", placeholder: "パスワード(確認用)"
+      .sign-up__form-submit
+        = f.submit "→", class: "sign-up__form-btn"

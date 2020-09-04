@@ -1,5 +1,9 @@
 class ProfilesController < ApplicationController
-  def index
+  def show
+    @user = User.find(current_user.id)
+  end
+
+  def edit
     @user = User.find(current_user.id)
   end
 end

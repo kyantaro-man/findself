@@ -22,6 +22,8 @@
         %li
           = link_to "マイページ", user_profiles_path(current_user.id)
         %li
+          = link_to "マイページ編集", edit_user_profiles_path(current_user.id)
+        %li
           = @user.nickname
         %li 
           = @user.username

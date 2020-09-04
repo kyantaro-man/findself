@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :profiles, only: :index
+    resource :profiles, only: [:edit, :show]
   end
 
   root to: 'tops#index'

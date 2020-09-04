@@ -1,3 +1,152 @@
-// Place all the styles related to the profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.profile__header {
+
+  &--top {
+    height: 320px;
+    position: relative;
+  }
+
+  &--cover-image {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background-image: url(/assets/no-profile.png);
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: cover;
+  }
+
+  &--catch-copy {
+    position: absolute;
+    left: 200px;
+    bottom: 12px;
+    font-size: 24px;
+  }
+
+  &--profile-image {
+    position: absolute;
+    left: 32px;
+    bottom: -72px;
+    height: 144px;
+    width: 144px;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    background-image: url(/assets/no-profile.png);
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: cover;
+  }
+
+  &--bottom {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    
+    &-inner {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      margin-left: 200px;
+    }
+  }
+
+  &--names {
+    display: flex;
+
+    &-item {
+      width: 160px;
+      margin-right: 16px;
+    }
+  }
+
+  &--sns {
+    height: 48px;
+    background-color: #eee;
+    border-radius: 8px;
+    line-height: 48px;
+    display: flex;
+
+    &-item {
+      width: 44px;
+      text-align: center;
+    }
+  }
+
+  &--icons {
+    display: flex;
+
+    &-item {
+      width: 44px;
+      text-align: center;
+    }
+  }
+}
+
+.profile__bottom {
+  width: 100vw;
+}
+
+.profile__column {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+
+  &-main {
+    width: calc(200% / 3);
+    box-shadow: rgba(0, 0, 0, 0.18) 1px 0px 4px;
+
+    &-inner {
+      padding: 40px 40px 80px 20px;
+    }
+
+    &-item {
+      margin-top: 60px;
+
+      &--top {
+        display: flex;
+        align-items: center;
+      }
+
+      &-title {
+        margin-right: 24px;
+      }
+
+      &-icons {
+        display: flex;
+
+        &-item {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &-side {
+    width: calc(100% / 3);
+
+    &-inner {
+      padding: 40px 40px 80px 20px;
+    }
+
+    &-item {
+      width: 300px;
+      border: 1px solid #333;
+      margin-top: 40px;
+
+
+      &--top {
+        display: flex;
+        align-items: center;
+      }
+
+      &-title {
+        margin-right: 24px;
+      }
+
+      &-icons {
+        display: flex;
+
+        &-item {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

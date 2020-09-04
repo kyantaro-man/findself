@@ -3,6 +3,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
     create_table :profiles do |t|
       t.string :cover_image
       t.string :profile_image
+      t.string :catch_copy
       t.text :introduction 
       t.string :goal
       t.text :career

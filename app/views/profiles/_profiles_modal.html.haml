@@ -22,8 +22,14 @@
 .modal.js-modal#modal03
   .modal__bg.js-modal-close
   .modal__container
-    %p プロフィール写真変更モーダル
-    = link_to "閉じる", "", class: "js-modal-close"
+    %h3.modal__container-title プロフィール写真
+    .modal__container-contents
+      .modal__container-contents__profile-image
+      = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__profile-image--form"}, local: true do |f|
+        = f.file_field :profile_image
+        .modal__container-contents__profile-image--actions
+          = link_to "閉じる", "", class: "js-modal-close"
+          = f.submit "更新する"
 .modal.js-modal#modal04
   .modal__bg.js-modal-close
   .modal__container

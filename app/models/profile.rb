@@ -4,4 +4,6 @@ class Profile < ApplicationRecord
   validates :goal, length: { maximum: 300 }
   validates :career, length: { maximum: 2000 }
   belongs_to :user
+
+  mount_uploader :cover_image, ImageUploader
 end

@@ -6,13 +6,20 @@
   }
 
   &--cover-image {
-    position: absolute;
     height: 100%;
     width: 100vw;
     background-image: url(/assets/no-profile.png);
     background-position-x: 50%;
     background-position-y: 50%;
     background-size: cover;
+
+    &__hover-bg {
+      position: relative;
+      display: none;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+    }
   }
 
   &--catch-copy {
@@ -34,6 +41,15 @@
     background-position-x: 50%;
     background-position-y: 50%;
     background-size: cover;
+
+    &__hover-bg {
+      position: relative;
+      display: none;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
+    }
   }
 
   &--bottom {
@@ -151,5 +167,61 @@
         }
       }
     }
+  }
+}
+
+.modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  &__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+}
+
+.js-modal-open {
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    color: #FF914D;
+  }
+
+  &.cover-image {
+    display: none;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.profile-image {
+    display: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
   }
 }

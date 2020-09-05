@@ -33,8 +33,18 @@
 .modal.js-modal#modal04
   .modal__bg.js-modal-close
   .modal__container
-    %p SNS変更モーダル
-    = link_to "閉じる", "", class: "js-modal-close"
+    %h3.modal__container-title SNS
+    .modal__container-contents
+      .modal__container-contents__sns
+        %section.modal__container-contents__sns--twitter
+          Twitter
+          = link_to "連携する", "#"
+        %section.modal__container-contents__sns--facebook
+          Facebook
+          = link_to "連携する", "#"
+        %section.modal__container-contents__sns--google
+          Google
+          = link_to "連携する", "#"
 .modal.js-modal#modal05
   .modal__bg.js-modal-close
   .modal__container

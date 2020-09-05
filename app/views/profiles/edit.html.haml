@@ -3,7 +3,7 @@
   .main
     .profile__header
       .profile__header--top
-        .profile__header--cover-image
+        .profile__header--cover-image{style: "background-image: url(#{@profile.cover_image.url})"}
           .profile__header--cover-image__hover-bg
             = link_to "カバー写真を変更", "", class: "js-modal-open cover-image", data: { target: "modal01" }
           = link_to "", class: "js-modal-open", data: { target: "modal02" } do

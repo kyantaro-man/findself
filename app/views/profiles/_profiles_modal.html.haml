@@ -1,30 +1,36 @@
 .modal.js-modal#modal01
   .modal__bg.js-modal-close
-  .modal__content
-    %p カバー写真変更モーダル
-    = link_to "閉じる", "", class: "js-modal-close"
+  .modal__container
+    %h3.modal__container-title カバー写真
+    .modal__container-contents
+      .modal__container-contents__cover-image
+      = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__cover-image--form"}, local: true do |f|
+        = f.file_field :cover_image
+        .modal__container-contents__cover-image--actions
+          = link_to "閉じる", "", class: "js-modal-close"
+          = f.submit "更新する"
 .modal.js-modal#modal02
   .modal__bg.js-modal-close
-  .modal__content
+  .modal__container
     %p キャッチコピー変更モーダル
     = link_to "閉じる", "", class: "js-modal-close"
 .modal.js-modal#modal03
   .modal__bg.js-modal-close
-  .modal__content
+  .modal__container
     %p プロフィール写真変更モーダル
     = link_to "閉じる", "", class: "js-modal-close"
 .modal.js-modal#modal04
   .modal__bg.js-modal-close
-  .modal__content
+  .modal__container
     %p SNS変更モーダル
     = link_to "閉じる", "", class: "js-modal-close"
 .modal.js-modal#modal05
   .modal__bg.js-modal-close
-  .modal__content
+  .modal__container
     %p 関連リンク変更モーダル
     = link_to "閉じる", "", class: "js-modal-close"
 .modal.js-modal#modal06
   .modal__bg.js-modal-close
-  .modal__content
+  .modal__container
     %p 基本情報変更モーダル
     = link_to "閉じる", "", class: "js-modal-close"

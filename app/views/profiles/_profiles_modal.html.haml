@@ -12,8 +12,13 @@
 .modal.js-modal#modal02
   .modal__bg.js-modal-close
   .modal__container
-    %p キャッチコピー変更モーダル
-    = link_to "閉じる", "", class: "js-modal-close"
+    %h3.modal__container-title キャッチコピー
+    .modal__container-contents
+      = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__catch-copy--form"}, local: true do |f|
+        = f.text_field :catch_copy
+        .modal__container-contents__catch-copy--actions
+          = link_to "閉じる", "", class: "js-modal-close"
+          = f.submit "更新する"
 .modal.js-modal#modal03
   .modal__bg.js-modal-close
   .modal__container

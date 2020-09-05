@@ -7,7 +7,8 @@
           .profile__header--cover-image__hover-bg
             = link_to "カバー写真を変更", "", class: "js-modal-open cover-image", data: { target: "modal01" }
           = link_to "", class: "js-modal-open", data: { target: "modal02" } do
-            %p.profile__header--catch-copy 早寝が得意です。0.93秒で眠りにつくことができます。
+            %p.profile__header--catch-copy
+              = @profile.catch_copy
         .profile__header--profile-image
           .profile__header--profile-image__hover-bg
             = link_to "プロフィール写真を変更", "", class: "js-modal-open profile-image", data: { target: "modal03" }

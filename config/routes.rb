@@ -6,5 +6,10 @@ Rails.application.routes.draw do
     get 'basics', to: 'users/registrations#new_basic'
     post 'basics', to: 'users/registrations#create_basic'
   end
+
+  resources :users do
+    resource :profiles, only: [:edit, :update, :show]
+  end
+
   root to: 'tops#index'
 end

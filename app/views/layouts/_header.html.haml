@@ -20,6 +20,10 @@
       = link_to image_tag("/assets/no-profile.png", alt: "プロフィール画像", height: "44px", width: "44px", class: "user-profile__image"),  edit_user_registration_path
       %ul.user-profile__text
         %li
+          = link_to "マイページ", user_profiles_path(current_user.id)
+        %li
+          = link_to "マイページ編集", edit_user_profiles_path(current_user.id), data: {turbolinks: false}
+        %li
           = @user.nickname
         %li 
           = @user.username

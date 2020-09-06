@@ -1,0 +1,131 @@
+.wrapper
+  = render partial: 'layouts/header'
+  .main
+    .profile__header
+      .profile__header--top
+        .profile__header--cover-image{style: "background-image: url(#{@profile.cover_image.url})"}
+          .profile__header--cover-image__hover-bg
+            = link_to "カバー写真を変更", "", class: "js-modal-open cover-image", data: { target: "modal01" }
+          = link_to "", class: "js-modal-open", data: { target: "modal02" } do
+            %p.profile__header--catch-copy
+              = @profile.catch_copy
+        .profile__header--profile-image{style: "background-image: url(#{@profile.profile_image.url})"}
+          .profile__header--profile-image__hover-bg
+            = link_to "プロフィール写真を変更", "", class: "js-modal-open profile-image", data: { target: "modal03" }
+      = render partial: 'profiles_modal'
+      .profile__header--bottom
+        .profile__header--bottom-inner
+          %ul.profile__header--names
+            %li.profile__header--names-item
+              = @user.nickname
+            %li.profile__header--names-item
+              = @user.username
+          %ul.profile__header--sns
+            %li.profile__header--sns-item
+              = link_to "#" do
+                = icon("fab", "twitter")
+            %li.profile__header--sns-item
+              = link_to "#" do
+                = icon("fab", "facebook-f")
+            %li.profile__header--sns-item
+              = link_to "#" do
+                = icon("fab", "google")
+          %ul.profile__header--icons
+            %li.profile__header--icons-item
+              = link_to "", class: "js-modal-open", data: { target: "modal04" } do
+                = icon("fas", "edit")
+            %li.profile__header--icons-item
+              公開
+    .profile__bottom
+      .profile__column
+        .profile__column-main
+          .profile__column-main-inner
+            %section.profile__column-main-item
+              .profile__column-main-item--top
+                %h2.profile__column-main-item-title 紹介文
+                %ul.profile__column-main-item-icons
+                  %li.profile__column-main-item-icons-item
+                    = link_to "#" do
+                      = icon("fas", "edit")
+                  %li.profile__column-main-item-icons-item
+                    公開
+              %p.profile__column-main-item-content
+                こんにちは。野比のび太です。
+            %section.profile__column-main-item
+              .profile__column-main-item--top
+                %h2.profile__column-main-item-title 目標
+                %ul.profile__column-main-item-icons
+                  %li.profile__column-main-item-icons-item
+                    = link_to "#" do
+                      = icon("fas", "edit")
+                  %li.profile__column-main-item-icons-item
+                    公開
+              %p.profile__column-main-item-content
+                目標はしずかちゃんと結婚することです。
+            %section.profile__column-main-item
+              .profile__column-main-item--top
+                %h2.profile__column-main-item-title 経歴
+                %ul.profile__column-main-item-icons
+                  %li.profile__column-main-item-icons-item
+                    = link_to "#" do
+                      = icon("fas", "edit")
+                  %li.profile__column-main-item-icons-item
+                    公開
+              %p.profile__column-main-item-content
+                5年前にドラえもんに出会いました。
+            %section.profile__column-main-item
+              .profile__column-main-item--top
+                %h2.profile__column-main-item-title 関連リンク
+                %ul.profile__column-main-item-icons
+                  %li.profile__column-main-item-icons-item
+                    = link_to "", class: "js-modal-open", data: { target: "modal05" } do
+                      = icon("fas", "edit")
+                  %li.profile__column-main-item-icons-item
+                    公開
+              %p.profile__column-main-item-content
+                = "#{@profile.related_title}:"
+                = link_to "#{@profile.related_link}"
+            %section.profile__column-main-item
+              .profile__column-main-item--top
+                %h2.profile__column-main-item-title 基本情報
+                %ul.profile__column-main-item-icons
+                  %li.profile__column-main-item-icons-item
+                    = link_to "", class: "js-modal-open", data: { target: "modal06" } do
+                      = icon("fas", "edit")
+                  %li.profile__column-main-item-icons-item
+                    公開
+              %p.profile__column-main-item-content
+                出身地:
+                = "#{@basic.birth_place}"
+                %br
+                生年月日:
+                = "#{@basic.birth_date}"
+                %br
+                血液型:
+                = "#{@basic.blood_type}"
+                %br
+                性別:
+                = "#{@basic.gender}"
+            %section.profile__column-main-item
+              .profile__column-main-item--top
+                %h2.profile__column-main-item-title 添付ファイル
+                %ul.profile__column-main-item-icons
+                  %li.profile__column-main-item-icons-item
+                    = link_to "#" do
+                      = icon("fas", "edit")
+                  %li.profile__column-main-item-icons-item
+                    公開
+              %p.profile__column-main-item-content
+                添付ファイルです。
+        .profile__column-side
+          .profile__column-side-inner
+            %section.profile__column-side-item
+              .profile__column-side-item--top
+                %h2.profile__column-side-item-title 自己分析結果
+                .profile__column-side-item-icon
+                  公開
+              .profile__column-side-item--bottom
+                %p.profile__column-side-item-content
+                  ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー
+                
+  = render partial: 'layouts/footer'

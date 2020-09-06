@@ -94,10 +94,17 @@
                   %li.profile__column-main-item-icons-item
                     公開
               %p.profile__column-main-item-content
-                出身地: 東京都
-                生年月日: 2000年
-                血液型
-                性別
+                出身地:
+                = "#{@basic.birth_place}"
+                %br
+                生年月日:
+                = "#{@basic.birth_date}"
+                %br
+                血液型:
+                = "#{@basic.blood_type}"
+                %br
+                性別:
+                = "#{@basic.gender}"
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 添付ファイル

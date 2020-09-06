@@ -61,8 +61,37 @@
           .modal__container-contents__related-link--actions
             = link_to "閉じる", "", class: "js-modal-close"
             = f.submit "更新する"
-.modal.js-modal#modal06
-  .modal__bg.js-modal-close
-  .modal__container
-    %p 基本情報変更モーダル
-    = link_to "閉じる", "", class: "js-modal-close"
+-# 以下は、後々修正→モーダルではなくbasicモデルの編集ページと詳細ページを作成する
+-# .modal.js-modal#modal06
+-#   .modal__bg.js-modal-close
+-#   .modal__container
+-#     %h3.modal__container-title 基本情報
+-#     .modal__container-contents
+-#       .modal__container-contents__basics
+-#         = form_with model: @basic, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__basics--form"}, local: true do |f|
+-#           %section.modal__container-contents__related-link--title
+-#             出身地
+-#             = f.text_field :birth_place
+-#           %section.modal__container-contents__related-link--link
+-#             生年月日
+-#             = f.date_select :birth_date, {include_blank: true, use_month_numbers: true, end_year: Time.now.year}
+-#           %section.modal__container-contents__related-link--link
+-#             血液型
+-#             = f.select :blood_type, options_for_select(Basic.blood_types.keys, selected: "#{@basic.blood_type}"), {}, {}
+-#           %section.modal__container-contents__related-link--link
+-#             性別
+-#             .sign-up__form-item--radio-box
+-#               = f.radio_button :gender, :無回答
+-#               = f.label :無回答
+-#             .sign-up__form-item--radio-box
+-#               = f.radio_button :gender, :男性
+-#               = f.label :男性
+-#             .sign-up__form-item--radio-box
+-#               = f.radio_button :gender, :女性
+-#               = f.label :女性
+-#             .sign-up__form-item--radio-box
+-#               = f.radio_button :gender, :その他
+-#               = f.label :その他
+-#           .modal__container-contents__related-link--actions
+-#             = link_to "閉じる", "", class: "js-modal-close"
+-#             = f.submit "更新する"

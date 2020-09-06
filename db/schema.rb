@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_024940) do
     t.text "introduction"
     t.string "goal"
     t.text "career"
+    t.string "related_title"
     t.string "related_link"
     t.string "attached_file"
     t.bigint "user_id"

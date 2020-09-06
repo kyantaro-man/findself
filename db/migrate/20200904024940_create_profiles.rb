@@ -7,6 +7,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.text :introduction 
       t.string :goal
       t.text :career
+      t.string :related_title
       t.string :related_link
       t.string :attached_file
       t.references :user

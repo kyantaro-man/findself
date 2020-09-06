@@ -22,7 +22,7 @@
         %li
           = link_to "マイページ", user_profiles_path(current_user.id)
         %li
-          = link_to "マイページ編集", edit_user_profiles_path(current_user.id)
+          = link_to "マイページ編集", edit_user_profiles_path(current_user.id), data: {turbolinks: false}
         %li
           = @user.nickname
         %li 

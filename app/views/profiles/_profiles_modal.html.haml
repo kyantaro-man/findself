@@ -48,8 +48,19 @@
 .modal.js-modal#modal05
   .modal__bg.js-modal-close
   .modal__container
-    %p 関連リンク変更モーダル
-    = link_to "閉じる", "", class: "js-modal-close"
+    %h3.modal__container-title 関連リンク
+    .modal__container-contents
+      .modal__container-contents__related-link
+        = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__related-link--form"}, local: true do |f|
+          %section.modal__container-contents__related-link--title
+            関連タイトル
+            = f.text_field :related_title
+          %section.modal__container-contents__related-link--link
+            関連リンク
+            = f.text_field :related_link
+          .modal__container-contents__related-link--actions
+            = link_to "閉じる", "", class: "js-modal-close"
+            = f.submit "更新する"
 .modal.js-modal#modal06
   .modal__bg.js-modal-close
   .modal__container

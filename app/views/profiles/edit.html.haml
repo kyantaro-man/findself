@@ -83,7 +83,7 @@
                   %li.profile__column-main-item-icons-item
                     公開
               %p.profile__column-main-item-content
-                = link_to "ドラえもんのページ", "https://dora-world.com/"
+                = link_to "#{@profile.related_title}", "#{@profile.related_link}"
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 基本情報

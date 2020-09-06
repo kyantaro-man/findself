@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.required(:profile).permit(:cover_image, :profile_image, :catch_copy, :introduction, :goal, :career, :related_link, :attached_file)
+    params.required(:profile).permit(:cover_image, :profile_image, :catch_copy, :introduction, :goal, :career, :related_title, :related_link, :attached_file)
   end
 
   def set_user

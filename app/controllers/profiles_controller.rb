@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
     @profile = @user.profile
     @basic = @user.basic
     @profile.update(profile_params)
-    @basic.update(basic_params)
+    # @basic.update(basic_params)
   end
 
   private
@@ -26,9 +26,9 @@ class ProfilesController < ApplicationController
     params.required(:profile).permit(:cover_image, :profile_image, :catch_copy, :introduction, :goal, :career, :related_title, :related_link, :attached_file)
   end
 
-  def basic_params
-    params.required(:basic).permit(:birth_place, :birth_date, :blood_type, :gender)
-  end
+  # def basic_params
+  #   params.required(:basic).permit(:birth_place, :birth_date, :blood_type, :gender)
+  # end
 
   def set_user
     @user = User.find(params[:user_id])

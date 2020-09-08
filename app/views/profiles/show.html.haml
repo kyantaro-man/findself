@@ -43,7 +43,7 @@
                   %li.profile__column-main-item-icons-item
                     公開
               %p.profile__column-main-item-content
-                こんにちは。野比のび太です。
+                = markdown(@profile.introduction)
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 目標
@@ -54,7 +54,7 @@
                   %li.profile__column-main-item-icons-item
                     公開
               %p.profile__column-main-item-content
-                目標はしずかちゃんと結婚することです。
+                = markdown(@profile.goal)
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 経歴
@@ -65,7 +65,7 @@
                   %li.profile__column-main-item-icons-item
                     公開
               %p.profile__column-main-item-content
-                5年前にドラえもんに出会いました。
+                = markdown(@profile.career)
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 関連リンク

@@ -227,6 +227,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (3.5.0)
     regexp_parser (1.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -311,6 +312,7 @@ DEPENDENCIES
   capistrano3-unicorn
   capybara (>= 2.15)
   carrierwave
+  coderay
   devise
   fog-aws
   font-awesome-sass
@@ -322,6 +324,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
+  redcarpet
   sass-rails (>= 6)
   selenium-webdriver
   spring

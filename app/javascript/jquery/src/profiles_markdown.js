@@ -12,7 +12,7 @@ $(function() {
 })
 
 $(function() {
-  $(document).on("click", '.markdown-cancel-button', function() {
+  $(document).on("click", '.markdown-button-cancel', function() {
     let markdownId = $(this).data('cancel-id');
     let markdownLabelArea = $('#js-label-' + markdownId);
     let markdownTextArea = $('#js-textarea-' + markdownId);

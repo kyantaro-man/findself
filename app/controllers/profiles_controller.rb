@@ -16,7 +16,11 @@ class ProfilesController < ApplicationController
     @user = User.find(current_user.id)
     @profile = @user.profile
     @basic = @user.basic
-    @profile.update(profile_params)
+    if @profile.update(profile_params)
+      redirect_to "/users/#{current_user.id}/profiles/edit", notice: 'プロフィールを更新しました'
+    else
+      render :edit
+    end
     # @basic.update(basic_params)
   end
 

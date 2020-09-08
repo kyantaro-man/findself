@@ -45,7 +45,7 @@
                 %h2.profile__column-main-item-title 紹介文
                 %ul.profile__column-main-item-icons
                   %li.profile__column-main-item-icons-item
-                    %span.js-edit-markdown-button{data: { target: "markdown01"}}
+                    %span.js-edit-markdown-button.link{data: { target: "markdown01"}}
                       = icon("fas", "edit")
                   %li.profile__column-main-item-icons-item
                     公開
@@ -53,16 +53,16 @@
                 .profile__column-main-item-content#js-label-markdown01
                   = markdown(@profile.introduction)
                 = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, local: true do |f|
-                  = f.text_area :introduction, id: "js-textarea-markdown01", class: "form-control", style: "display: none"
-                  #js-button-markdown01{style: "display: none"}
-                    %button.markdown-cancel-button{data: {cancel: {id: "markdown01"}}} 閉じる
-                    = f.submit "更新する", data: {update: {id: "markdown01"}}
+                  = f.text_area :introduction, id: "js-textarea-markdown01", class: "markdown-form form-control", style: "display: none"
+                  .markdown-button#js-button-markdown01{style: "display: none"}
+                    %button.markdown-button-cancel{type: "button", data: {cancel: {id: "markdown01"}}} 閉じる
+                    = f.submit "更新する", data: {update_id: "markdown01", user_id: current_user.id}, class: "markdown-button-update"
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 目標
                 %ul.profile__column-main-item-icons
                   %li.profile__column-main-item-icons-item
-                    %span.js-edit-markdown-button{data: { target: "markdown02"}}
+                    %span.js-edit-markdown-button.link{data: { target: "markdown02"}}
                       = icon("fas", "edit")
                   %li.profile__column-main-item-icons-item
                     公開
@@ -70,16 +70,16 @@
                 .profile__column-main-item-content#js-label-markdown02
                   = markdown(@profile.goal)
                 = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, local: true do |f|
-                  = f.text_area :goal, id: "js-textarea-markdown02", class: "form-control", style: "display: none"
-                  #js-button-markdown02{style: "display: none"}
-                    %button.markdown-cancel-button{data: {cancel: {id: "markdown02"}}} 閉じる
-                    = f.submit "更新する", data: {update: {id: "markdown02"}}
+                  = f.text_area :goal, id: "js-textarea-markdown02", class: "markdown-form form-control", style: "display: none"
+                  .markdown-button#js-button-markdown02{style: "display: none"}
+                    %button.markdown-button-cancel{type: "button", data: {cancel: {id: "markdown02"}}} 閉じる
+                    = f.submit "更新する", data: {update_id: "markdown02", user_id: current_user.id}, class: "markdown-button-update"
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 経歴
                 %ul.profile__column-main-item-icons
                   %li.profile__column-main-item-icons-item
-                    %span.js-edit-markdown-button{data: { target: "markdown03"}}
+                    %span.js-edit-markdown-button.link{data: { target: "markdown03"}}
                       = icon("fas", "edit")
                   %li.profile__column-main-item-icons-item
                     公開
@@ -87,10 +87,10 @@
                 .profile__column-main-item-content#js-label-markdown03
                   = markdown(@profile.career)
                 = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, local: true do |f|
-                  = f.text_area :career, id: "js-textarea-markdown03", class: "form-control", style: "display: none"
-                  #js-button-markdown03{style: "display: none"}
-                    %button.markdown-cancel-button{data: {cancel: {id: "markdown03"}}} 閉じる
-                    = f.submit "更新する", data: {update: {id: "markdown03"}}
+                  = f.text_area :career, id: "js-textarea-markdown03", class: "markdown-form form-control", style: "display: none"
+                  .markdown-button#js-button-markdown03{style: "display: none"}
+                    %button.markdown-button-cancel{type: "button", data: {cancel: {id: "markdown03"}}} 閉じる
+                    = f.submit "更新する", data: {update_id: "markdown03", user_id: current_user.id}, class: "markdown-button-update"
             %section.profile__column-main-item
               .profile__column-main-item--top
                 %h2.profile__column-main-item-title 関連リンク

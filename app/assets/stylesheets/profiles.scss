@@ -265,10 +265,6 @@
   color: #333;
   text-decoration: none;
 
-  &:hover {
-    color: #FF914D;
-  }
-
   &.cover-image {
     display: none;
     color: #fff;
@@ -290,6 +286,10 @@
     transform: translate(-50%, -50%);
     white-space: nowrap;
   }
+
+  &:hover {
+    color: #FF914D;
+  }
 }
 
 .js-modal-close {
@@ -299,4 +299,33 @@
   color: #333;
   border: 1px solid #333;
   border-radius: 10px;
+}
+
+.markdown-form {
+  width: 100%;
+}
+
+.markdown-button {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+
+  &-cancel {
+    line-height: 36px;
+    padding: 0 30px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 10px;
+  }
+
+  &-update {
+    line-height: 36px;
+    padding: 0 30px;
+    color: #fff;
+    background-color: #FF914D;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin-left: 16px;
+  }
 }

@@ -30,10 +30,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_basic and return
     end
     @user.build_basic(@basic.attributes)
-    @user.save
-    session["devise.regist_data"]["user"].clear
-    sign_in(:user, @user)
-    redirect_to root_path, notice: '新規登録しました'
+    session["basic"] = @basic.attributes
+    @profile = @user.build_profile
+    render :new_profile
+  end
+
+  def create_profile
+    @user = User.new(session["devise.regist_data"]["user"])
+    @basic = Basic.new(session["basic"])
+    @profile = Profile.new(profile_params)
+    @user.build_basic(@basic.attributes)
+    @user.build_profile(@profile.attributes)
+    if @user.save
+      session["devise.regist_data"]["user"].clear
+      sign_in(:user, @user)
+      redirect_to root_path, notice: '新規登録しました'
+    else
+      render :new_profile and return
+    end
   end
 
   # GET /resource/edit
@@ -64,6 +78,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def basic_params
     params.require(:basic).permit(:birth_place, :birth_date, :blood_type, :gender)
+  end
+
+  def profile_params
+    params.required(:profile).permit(:cover_image, :profile_image, :catch_copy, :introduction, :goal, :career, :related_title, :related_link, :attached_file)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

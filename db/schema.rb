@@ -24,15 +24,15 @@ ActiveRecord::Schema.define(version: 2020_09_04_024940) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "cover_image"
-    t.string "profile_image"
-    t.string "catch_copy"
+    t.string "cover_image", default: "no-profile.png"
+    t.string "profile_image", default: "no-profile.png"
+    t.string "catch_copy", default: "キャッチコピーを更新してください"
     t.text "introduction"
-    t.string "goal"
+    t.string "goal", default: "目標を更新してください"
     t.text "career"
-    t.string "related_title"
-    t.string "related_link"
-    t.string "attached_file"
+    t.string "related_title", default: "関連タイトルを更新してください"
+    t.string "related_link", default: "関連リンクを更新してください"
+    t.string "attached_file", default: "添付ファイルを更新してください"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

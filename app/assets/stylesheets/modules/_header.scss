@@ -78,10 +78,15 @@ header {
   align-items: center;
 
   &__image {
+    height: 44px;
+    width: 44px;
     margin-right: 20px;
     border: solid 1px #333;
     border-radius: 50%;
     transition: 1.0s;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: cover;
     
     &:hover {
       opacity: 0.5;

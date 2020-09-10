@@ -17,7 +17,16 @@
         %li.user-menu__item
           = icon("fas", "edit")
     .user-profile
-      = link_to image_tag("/assets/no-profile.png", alt: "プロフィール画像", height: "44px", width: "44px", class: "user-profile__image"),  edit_user_registration_path
+      - if current_user.id == @user.id
+        = link_to "" do
+          .user-profile__image{style: "background-image: url(#{@profile.profile_image.url})"}
+      - else
+        - @user = User.find(current_user.id)
+        - @profile = @user.profile
+        = link_to "" do
+          .user-profile__image{style: "background-image: url(#{@profile.profile_image.url})"}
+        - @user = User.find(params[:user_id])
+        - @profile = @user.profile
       %ul.user-profile__text
         %li
           = link_to "13のページ", user_profiles_path(13)

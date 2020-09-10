@@ -4,6 +4,7 @@
     %h3.modal__container-title カバー写真
     .modal__container-contents
       .modal__container-contents__cover-image{style: "background-image: url(#{@profile.cover_image.url})"}
+      .modal__container-contents__cover-image-preview
       = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__form"}, local: true do |f|
         .modal__container-contents__form--top
           = f.label :cover_image, "ファイルを選択", class: "modal__container-contents__form--cover-image__label"
@@ -28,6 +29,7 @@
     %h3.modal__container-title プロフィール写真
     .modal__container-contents
       .modal__container-contents__profile-image{style: "background-image: url(#{@profile.profile_image.url})"}
+      .modal__container-contents__profile-image-preview
       = form_with model: @profile, url: {controller: 'profiles', action: 'show' }, html: {class: "modal__container-contents__form"}, local: true do |f|
         .modal__container-contents__form--top
           = f.label :profile_image, "ファイルを選択", class: "modal__container-contents__form--cover-image__label"

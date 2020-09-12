@@ -2,7 +2,6 @@ class ProfilesController < ApplicationController
   before_action :set_user
 
   def show
-    @user = User.find(current_user.id)
     @profile = @user.profile
   end
 

@@ -133,3 +133,19 @@ header {
     }
   }
 }
+
+.usermenu {
+  height: 185px;
+  width: 240px;
+  background: #fff;
+  border: 3px solid #FF914D;
+  display: none;
+  margin: 0 0 0 auto !important;
+
+  &-item {
+    border-bottom: 1px solid #FF914D;
+    color: #333;
+    padding: 6px;
+  }
+}
+

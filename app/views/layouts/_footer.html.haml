@@ -25,6 +25,6 @@
               %p.footer__menu__item-description チャットボットアプリです。Reactの勉強用で作成しました。(firebaseデプロイ)
     .footer__bottom
       .footer__bottom-logo
-        = link_to image_tag("/assets/title-logo.png", alt: "フッターロゴ画像", height: "44px", class: ""), root_path
+        = link_to image_tag("/assets/title-logo.png", alt: "フッターロゴ画像", height: "44px", class: ""), root_path, data: {turbolinks: false}
       .footer__bottom-text
-        = link_to "トップへ戻る", "#", class: "link white"
+        = link_to "トップへ戻る", "", class: "link white", data: {turbolinks: false}

@@ -29,12 +29,6 @@
         - @profile = @user.profile
       %ul.user-profile__text
         %li
-          = link_to "13のページ", user_profiles_path(13), data: {turbolinks: false}
-        %li
-          = link_to "マイページ", user_profiles_path(current_user.id), data: {turbolinks: false}
-        %li
-          = link_to "マイページ編集", edit_user_profiles_path(current_user.id), data: {turbolinks: false}
-        %li
           = @user.nickname
         %li 
           = @user.username
@@ -48,12 +42,12 @@
           = link_to "新規登録する", new_user_registration_path, class: "authentication-menu__link"
 %ul.usermenu
   %li.usermenu-item
-    = link_to "プロフィール編集ページへ"
+    = link_to "プロフィール編集ページへ", edit_user_profiles_path(current_user.id), data: {turbolinks: false}
   %li.usermenu-item
-    = link_to "プロフィールページへ"
+    = link_to "プロフィールページへ", user_profiles_path(current_user.id), data: {turbolinks: false}
   %li.usermenu-item
-    = link_to "ユーザー情報編集ページへ" 
+    = link_to "ユーザー情報編集ページへ", edit_user_registration_path
   %li.usermenu-item
-    = link_to "いいねページへ" 
+    = link_to "いいねページへ"
   %li.usermenu-item
-    = link_to "13のプロフィールへ", user_profiles_path(13)
+    = link_to "13のプロフィールへ", user_profiles_path(13), data: {turbolinks: false}
